@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Queue;
 
 public class Queue {
     private static class NodeOfQueue {
