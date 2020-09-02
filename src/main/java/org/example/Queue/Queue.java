@@ -11,6 +11,7 @@ public class Queue {
 
     private NodeOfQueue head;
     private NodeOfQueue tail;
+    private int count;
 
     public boolean isEmpty() {
         return head == null;
@@ -20,7 +21,7 @@ public class Queue {
         return head.data;
     }
 
-    public void add(int data) {
+    public void enqueue(int data) {
         NodeOfQueue nodeOfQueue = new NodeOfQueue(data);
         if (tail != null) {
             tail.next = nodeOfQueue;
@@ -29,14 +30,19 @@ public class Queue {
         if (head == null) {
             head = nodeOfQueue;
         }
+        count++;
     }
 
-    public int remove() {
+    public int dequeue() {
         int data = head.data;
         head = head.next;
         if (head == null) {
             tail = null;
         }
+        count--;
         return data;
+    }
+    public int queueSize() {
+        return this.count;
     }
 }
