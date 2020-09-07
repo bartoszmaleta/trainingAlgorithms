@@ -2,8 +2,10 @@ package org.example.MergeSort;
 
 public class MergeSort {
 
-
-    private static int[] mergeSort(int[] array) {
+    public static int[] mergeSort(int[] array) {
+        if (array == null) {
+            throw new IllegalArgumentException();
+        }
 
         if (array.length <= 1) {
             return array;
