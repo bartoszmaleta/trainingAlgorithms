@@ -35,6 +35,7 @@ public class QuickSort {
 
     public void sort(List<Integer> toSort) {
         if (toSort == null) throw new IllegalArgumentException();
+        if (toSort.size() == 0) return;
         quickSort(toSort, 0, toSort.size() - 1);
     }
 
